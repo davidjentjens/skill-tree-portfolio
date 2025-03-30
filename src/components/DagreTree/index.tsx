@@ -8,7 +8,7 @@ import { FlowHandler } from "../../models/FlowHandler";
 import { TreeHandler, TreeHandlerContext } from "../../models/TreeHandler";
 import { Direction, getLayoutedElements } from "../../utils/dagre";
 import { convertTreeNodeToNodesAndEdges } from "../../utils/nodes-edges";
-import ParticlesBackground from "../ui/particles-background";
+import ParticlesBackground from "../ui/ParticlesBackground";
 import { treeNodeHeight, treeNodeWidth } from "./styles";
 import { CustomReactFlow } from "./styles";
 import { nodeTypes } from "./types";
