@@ -4,12 +4,13 @@ import 'reactflow/dist/style.css';
 
 import { LayoutFlow } from './components/flow/DagreTree';
 import { absolute, flexCenter, fullSize } from './styles';
-import ParticlesBackground from './components/ui/particles-background';
+import Footer from './components/ui/footer';
 
 function App() {
   return (
     <div css={[absolute(), fullSize, flexCenter]}>
       <LayoutFlow />
+      <Footer />
     </div>
   );
 }
