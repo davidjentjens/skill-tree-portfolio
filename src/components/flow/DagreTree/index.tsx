@@ -1,7 +1,7 @@
 import { action, toJS } from "mobx";
 import { observer } from "mobx-react-lite";
 import { useMemo } from "react";
-import { ConnectionLineType, Controls, Edge, MiniMap, Node } from "reactflow";
+import { ConnectionLineType, Controls, MiniMap } from "reactflow";
 
 import { tree } from "../../../data/tree";
 import { FlowHandler } from "../../../models/FlowHandler";
@@ -9,39 +9,10 @@ import { TreeHandler, TreeHandlerContext } from "../../../models/TreeHandler";
 import { Direction, getLayoutedElements } from "../../../utils/dagre";
 import { convertTreeNodeToNodesAndEdges } from "../../../utils/nodes-edges";
 import ParticlesBackground from "../../ui/particles-background";
-import { TreeNode } from "../TreeNode";
 import { treeNodeHeight, treeNodeWidth } from "./styles";
 import { CustomReactFlow } from "./styles";
-
-function injectDataProperties(
-  nodes: Node[],
-  edges: Edge[],
-  changeShowingChildren: (nodeId: string, showChildren: boolean) => void
-): { nodes: Node[]; edges: Edge[] } {
-  const updatedNodes = nodes.map((node) => {
-    if (node.type === NodeType.TreeNode) {
-      return {
-        ...node,
-        data: {
-          ...node.data,
-          showingChildren: false,
-          changeShowingChildren,
-        },
-      };
-    }
-    return node;
-  });
-
-  return { nodes: updatedNodes, edges };
-}
-
-export enum NodeType {
-  TreeNode = "treeNode",
-}
-
-const nodeTypes = {
-  [NodeType.TreeNode]: TreeNode,
-} as const;
+import { nodeTypes } from "./types";
+import { injectDataProperties } from "./utils";
 
 export const LayoutFlow = observer(() => {
   const changeShowingChildren = action(
