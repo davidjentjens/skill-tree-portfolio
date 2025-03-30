@@ -1,10 +1,10 @@
-import { Edge, Node } from 'reactflow';
+import { Edge, Node } from "reactflow";
 
-import { NodeType } from '../components/flow/DagreTree';
-import { Skill } from '../types';
+import { NodeType } from "../components/flow/DagreTree/types";
+import { Skill } from "../types";
 
 const position = { x: 0, y: 0 };
-const edgeType = 'smoothstep';
+const edgeType = "smoothstep";
 
 export interface TreeViewData extends Skill {
   showingChildren: boolean;
@@ -19,7 +19,7 @@ export interface TreeNode {
 
 export function convertTreeNodeToNodesAndEdges(
   treeNode: TreeNode,
-  changeShowingChildren: (nodeId: string, showChildren: boolean) => void,
+  changeShowingChildren: (nodeId: string, showChildren: boolean) => void
 ): {
   nodes: Node<TreeViewData>[];
   edges: Edge[];
