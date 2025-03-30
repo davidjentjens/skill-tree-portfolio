@@ -1,8 +1,8 @@
-import { CSSObject } from '@emotion/react';
-import { Property } from 'csstype';
-import { CSSProperties } from 'react';
+import { CSSObject } from "@emotion/react";
+import { Property } from "csstype";
+import { CSSProperties } from "react";
 
-import { standardShadows, standardSizes, transitionTimes } from './theme';
+import { standardShadows, standardSizes, transitionTimes } from "./theme";
 
 /**
  * Represents a type that can be either a key of the `standardSizes` object or a number.
@@ -17,7 +17,7 @@ export type StandardSizeNumber = keyof typeof standardSizes | number;
  * @returns The standard size value.
  */
 export const getStandardSizes = (size: StandardSizeNumber): number =>
-  typeof size === 'number' ? size : standardSizes[size];
+  typeof size === "number" ? size : standardSizes[size];
 
 /**
  * Creates a standard sizing CSS object based on the provided CSS property and size.
@@ -27,7 +27,7 @@ export const getStandardSizes = (size: StandardSizeNumber): number =>
 export const createStandardSizing =
   (cssProp: keyof CSSProperties) =>
   (size: StandardSizeNumber): CSSObject => ({
-    [cssProp]: typeof size === 'number' ? size : standardSizes[size],
+    [cssProp]: typeof size === "number" ? size : standardSizes[size],
   });
 
 /**
@@ -42,9 +42,9 @@ export const absolute = (
   top?: number,
   right?: number,
   bottom?: number,
-  left?: number,
+  left?: number
 ): CSSObject => ({
-  position: 'absolute',
+  position: "absolute",
   top,
   right,
   bottom,
@@ -63,9 +63,9 @@ export const relative = (
   top?: number,
   right?: number,
   bottom?: number,
-  left?: number,
+  left?: number
 ): CSSObject => ({
-  position: 'relative',
+  position: "relative",
   top,
   right,
   bottom,
@@ -75,7 +75,7 @@ export const relative = (
 /**
  * Represents the border radius value used in styling.
  */
-export const borderRadius = createStandardSizing('borderRadius');
+export const borderRadius = createStandardSizing("borderRadius");
 
 /**
  * Creates a border style object with the specified color and size.
@@ -83,7 +83,7 @@ export const borderRadius = createStandardSizing('borderRadius');
  * @param size - The size of the border. Defaults to '2px'.
  * @returns The border style object.
  */
-export const border = (color: string, size = '2px') => ({
+export const border = (color: string, size = "2px") => ({
   border: `${size} solid ${color}`,
 });
 
@@ -92,7 +92,7 @@ export const border = (color: string, size = '2px') => ({
  * @param {string} type - The type of sizing (e.g. 'padding').
  * @returns {string} - The standard sizing for padding.
  */
-export const padding = createStandardSizing('padding');
+export const padding = createStandardSizing("padding");
 
 /**
  * Returns a CSSObject with padding applied to the left and right sides.
@@ -109,7 +109,9 @@ export const paddingHorizontal = (size: StandardSizeNumber): CSSObject => ({
  * @param size - The size of the padding, which should be one of the keys of the `standardSizes` object.
  * @returns A CSSObject with `paddingTop` and `paddingBottom` properties set to the specified size.
  */
-export const paddingVertical = (size: keyof typeof standardSizes): CSSObject => ({
+export const paddingVertical = (
+  size: keyof typeof standardSizes
+): CSSObject => ({
   paddingTop: getStandardSizes(size),
   paddingBottom: getStandardSizes(size),
 });
@@ -120,14 +122,14 @@ export const paddingVertical = (size: keyof typeof standardSizes): CSSObject => 
  * @param property The CSS property to create the sizing for.
  * @returns The standard sizing for the given CSS property.
  */
-export const margin = createStandardSizing('margin');
+export const margin = createStandardSizing("margin");
 
 /**
  * CSS object for centering an element horizontally by setting the left and right margins to 'auto'.
  */
 export const marginHorizontalCenter: CSSObject = {
-  marginLeft: 'auto',
-  marginRight: 'auto',
+  marginLeft: "auto",
+  marginRight: "auto",
 };
 
 /**
@@ -145,7 +147,9 @@ export const marginHorizontal = (size: StandardSizeNumber): CSSObject => ({
  * @param size - The size of the margin, which should be one of the standard sizes.
  * @returns A CSSObject representing the margin styles.
  */
-export const marginVertical = (size: keyof typeof standardSizes): CSSObject => ({
+export const marginVertical = (
+  size: keyof typeof standardSizes
+): CSSObject => ({
   marginTop: getStandardSizes(size),
   marginBottom: getStandardSizes(size),
 });
@@ -155,8 +159,8 @@ export const marginVertical = (size: keyof typeof standardSizes): CSSObject => (
  * @param direction The flex direction. Defaults to 'row'.
  * @returns The CSSObject representing the flex container.
  */
-export const flex = (direction: Property.FlexDirection = 'row'): CSSObject => ({
-  display: 'flex',
+export const flex = (direction: Property.FlexDirection = "row"): CSSObject => ({
+  display: "flex",
   flexDirection: direction,
 });
 
@@ -177,14 +181,15 @@ export const flexValue = (value = 1): CSSObject => ({
  * @returns The CSSObject representing the font style.
  */
 export const font = (
-  family?: CSSObject['fontFamily'],
-  size?: CSSObject['fontSize'],
-  weight?: CSSObject['fontWeight'],
-): CSSObject => ({
-  fontFamily: family,
-  fontSize: size,
-  fontWeight: weight,
-});
+  family?: CSSObject["fontFamily"],
+  size?: CSSObject["fontSize"],
+  weight?: CSSObject["fontWeight"]
+): CSSObject =>
+  ({
+    fontFamily: family,
+    fontSize: size,
+    fontWeight: weight,
+  } as CSSObject);
 
 /**
  * Represents a utility function that applies a flex value of 1 to a CSS property.
@@ -211,83 +216,83 @@ export const flex5 = flexValue(5);
  * CSS object for centering elements using flexbox.
  */
 export const flexCenter: CSSObject = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
 };
 
 /**
  * CSS object for centering elements vertically using flexbox.
  */
 export const flexCenterVertical: CSSObject = {
-  display: 'flex',
-  alignItems: 'center',
+  display: "flex",
+  alignItems: "center",
 };
 
 /**
  * CSS object for centering elements horizontally using flexbox.
  */
 export const flexCenterHorizontal: CSSObject = {
-  display: 'flex',
-  justifyContent: 'center',
+  display: "flex",
+  justifyContent: "center",
 };
 
 /**
  * CSS object for creating a flex container with space between items.
  */
 export const flexBetween: CSSObject = {
-  display: 'flex',
-  justifyContent: 'space-between',
+  display: "flex",
+  justifyContent: "space-between",
 };
 
 /**
  * CSS object for applying flex layout with space around alignment.
  */
 export const flexAround: CSSObject = {
-  display: 'flex',
-  justifyContent: 'space-around',
+  display: "flex",
+  justifyContent: "space-around",
 };
 
 /**
  * CSS object for evenly distributing flex items along the main axis.
  */
 export const flexEvenly: CSSObject = {
-  display: 'flex',
-  justifyContent: 'space-evenly',
+  display: "flex",
+  justifyContent: "space-evenly",
 };
 
 /**
  * CSS object for flex column style.
  */
-export const flexColumn = flex('column');
+export const flexColumn = flex("column");
 
 /**
  * Represents a CSS object that sets the width and height to 100%.
  */
 export const fullSize: CSSObject = {
-  width: '100%',
-  height: '100%',
+  width: "100%",
+  height: "100%",
 };
 
 /**
  * Represents a CSS object that sets the width to 100%.
  */
 export const fullWidth: CSSObject = {
-  width: '100%',
+  width: "100%",
 };
 
 /**
  * CSS object representing full height.
  */
 export const fullHeight: CSSObject = {
-  height: '100%',
+  height: "100%",
 };
 
 /**
  * CSS object for applying image cover style.
  */
 export const imageCover = {
-  objectFit: 'cover',
+  objectFit: "cover",
   ...(fullSize as CSSObject),
 };
 
@@ -295,7 +300,7 @@ export const imageCover = {
  * CSS object for containing images.
  */
 export const imageContain = {
-  objectFit: 'contain',
+  objectFit: "contain",
   ...fullSize,
 } as CSSObject;
 
@@ -307,10 +312,10 @@ export const imageContain = {
  */
 export const dropShadow = (
   size: keyof typeof standardShadows,
-  inset?: boolean,
+  inset?: boolean
 ): CSSObject => ({
   boxShadow: inset
-    ? 'inset ' + standardShadows[size].replace('),', '), inset ')
+    ? "inset " + standardShadows[size].replace("),", "), inset ")
     : standardShadows[size],
 });
 
@@ -327,28 +332,28 @@ export const textShadow = (size: keyof typeof standardShadows): CSSObject => ({
  * CSS object representing center alignment.
  */
 export const center: CSSObject = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
 };
 
 /**
  * CSS object for horizontally centering an element.
  */
 export const centerHorizontal: CSSObject = {
-  position: 'absolute',
-  left: '50%',
-  transform: 'translateX(-50%)',
+  position: "absolute",
+  left: "50%",
+  transform: "translateX(-50%)",
 };
 
 /**
  * CSS object for centering an element vertically.
  */
 export const centerVertical: CSSObject = {
-  position: 'absolute',
-  top: '50%',
-  transform: 'translateY(-50%)',
+  position: "absolute",
+  top: "50%",
+  transform: "translateY(-50%)",
 };
 
 /**
@@ -364,8 +369,8 @@ export const transition = (time: keyof typeof transitionTimes): CSSObject => ({
  * Represents a CSS object for clearing text styles.
  */
 export const clearTextStyle: CSSObject = {
-  textDecoration: 'none',
-  color: 'inherit',
+  textDecoration: "none",
+  color: "inherit",
 };
 
 /**
