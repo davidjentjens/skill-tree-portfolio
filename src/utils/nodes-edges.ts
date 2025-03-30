@@ -1,7 +1,7 @@
 import { Edge, Node } from "reactflow";
 
 import { NodeType } from "../components/DagreTree/types";
-import { Skill } from "../types";
+import { Skill } from "../types/index";
 
 const position = { x: 0, y: 0 };
 const edgeType = "smoothstep";
