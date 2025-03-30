@@ -1,4 +1,3 @@
-import "./App.css";
 import "@blueprintjs/core/lib/css/blueprint.css";
 import "reactflow/dist/style.css";
 
