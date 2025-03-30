@@ -1,13 +1,13 @@
 import { makeAutoObservable } from 'mobx';
 import {
+  addEdge,
+  applyEdgeChanges,
+  applyNodeChanges,
   Connection,
   Edge,
   EdgeChange,
   Node,
   NodeChange,
-  addEdge,
-  applyEdgeChanges,
-  applyNodeChanges,
 } from 'reactflow';
 
 export class FlowHandler {

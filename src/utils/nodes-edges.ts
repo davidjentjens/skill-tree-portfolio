@@ -1,4 +1,5 @@
-import { Node, Edge } from 'reactflow';
+import { Edge, Node } from 'reactflow';
+
 import { NodeType } from '../components/flow/DagreTree';
 import { Skill } from '../types';
 

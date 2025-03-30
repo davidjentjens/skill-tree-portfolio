@@ -1,47 +1,43 @@
-import { Handle, NodeProps, Position, useNodeId } from 'reactflow';
-import { TreeViewData } from '../../utils/nodes-edges';
 import { Button } from '@blueprintjs/core';
-import { FlexColumn, FlexRow } from '../base/Flex';
-import { flex1, fullSize, center } from '../../styles';
 import { observer } from 'mobx-react-lite';
-import { useTreeHandler } from '../../models/TreeHandler';
-import { useState, useEffect } from 'react';
-import profileUrl from '../../assets/pp.jpeg'
-
-import { FaUser } from 'react-icons/fa';
+import { useEffect, useState } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as SiIcons from 'react-icons/si';
-import { IconType } from 'react-icons';
+import { Handle, NodeProps, Position, useNodeId } from 'reactflow';
 
-// Import styles from the dedicated styles file
+import profileUrl from '../../assets/pp.jpeg';
+import { useTreeHandler } from '../../models/TreeHandler';
+import { flex1, fullSize } from '../../styles';
 import {
+  childCountBadge,
+  headerContainer,
+  hoverStyles,
   nodeContainer,
   nodeContent,
   nodeIcon,
   nodeLabel,
-  nodeSubLabel,
   nodeMetadata,
-  toggleButton,
-  hoverStyles,
-  headerContainer,
+  nodeSubLabel,
   progressBarContainer,
   progressBarFill,
-  childCountBadge,
   rootNodeContainer,
-  rootNodeToggleButton
+  rootNodeToggleButton,
+  toggleButton,
 } from '../../styles/treeNode';
+import { TreeViewData } from '../../utils/nodes-edges';
+import { FlexColumn } from '../base/Flex';
 
 export const treeNodeWidth = 272;
 export const treeNodeHeight = 220;
 export const rootNodeSize = 150; // Set a size for the root node
 
-export type TreeNodeProps = NodeProps<TreeViewData>
+export type TreeNodeProps = NodeProps<TreeViewData>;
 
 export const TreeNode = observer((props: TreeNodeProps) => {
   const treeHandler = useTreeHandler();
   const [isHovered, setIsHovered] = useState(false);
   const [animatedProficiency, setAnimatedProficiency] = useState(0);
-  
+
   const nodeId = useNodeId();
   const node = treeHandler.getNodeById(nodeId);
 
@@ -61,7 +57,7 @@ export const TreeNode = observer((props: TreeNodeProps) => {
     const timer = setTimeout(() => {
       setAnimatedProficiency(normalizedProficiency);
     }, 300); // Small delay for visual effect
-    
+
     return () => clearTimeout(timer);
   }, [normalizedProficiency]);
 
@@ -80,32 +76,35 @@ export const TreeNode = observer((props: TreeNodeProps) => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         css={[rootNodeContainer, isHovered && hoverStyles]}
-      >        
+      >
         {/* Profile Picture */}
-        <img 
+        <img
           src={profileUrl}
-          alt={data.label} 
+          alt={data.label}
           css={{ width: '200px', height: '80%', marginBottom: 10, borderRadius: '8px' }}
         />
 
         <div css={nodeContent}>
           <h3>👋 Hi, I&apos;m David M. Jentjens</h3>
           <p>Front-End Engineer & QA Manager with 6+ years of React experience</p>
-          <p>This interactive skill tree visualizes my technical expertise and experience. Each node represents a technology or skill in my toolkit.</p>
+          <p>
+            This interactive skill tree visualizes my technical expertise and experience.
+            Each node represents a technology or skill in my toolkit.
+          </p>
           <p>Click around to explore my capabilities and see how they connect!</p>
         </div>
-        
+
         {/* Expand/Collapse Button for Root Node */}
         {childCount > 0 && (
           <Button
             css={rootNodeToggleButton}
-            size='small'
-            variant='minimal'
+            size="small"
+            variant="minimal"
             onClick={() => setShowingChildren?.(!showingChildren)}
             icon={showingChildren ? 'chevron-up' : 'chevron-down'}
           />
         )}
-        
+
         <Handle type="source" position={Position.Bottom} isConnectable={isConnectable} />
       </div>
     );
@@ -119,21 +118,20 @@ export const TreeNode = observer((props: TreeNodeProps) => {
       css={[nodeContainer, isHovered && hoverStyles]}
     >
       <Handle type="target" position={Position.Top} isConnectable={isConnectable} />
-      
+
       {/* Child count badge */}
       {childCount > 0 && !showingChildren && (
-        <div css={childCountBadge}>
-          {childCount}
-        </div>
+        <div css={childCountBadge}>{childCount}</div>
       )}
-      
+
       <FlexColumn css={[fullSize]}>
         <div css={headerContainer}>
           <Icon css={nodeIcon} size={24} className="text-white" />
-          {proficiencyLevel && 
-          <div css={progressBarContainer}>
-            <div css={progressBarFill(animatedProficiency)} />
-          </div>}
+          {proficiencyLevel && (
+            <div css={progressBarContainer}>
+              <div css={progressBarFill(animatedProficiency)} />
+            </div>
+          )}
         </div>
         <div css={[flex1, nodeContent]}>
           <div css={nodeLabel}>{data.label}</div>
@@ -144,15 +142,15 @@ export const TreeNode = observer((props: TreeNodeProps) => {
             <div css={nodeMetadata}>Proficiency: {normalizedProficiency}%</div>
           )}
         </div>
-        {childCount > 0 && 
+        {childCount > 0 && (
           <Button
             css={toggleButton}
-            size='small'
-            variant='minimal'
+            size="small"
+            variant="minimal"
             onClick={() => setShowingChildren?.(!showingChildren)}
             icon={showingChildren ? 'chevron-up' : 'chevron-down'}
           />
-        }
+        )}
       </FlexColumn>
       <Handle type="source" position={Position.Bottom} isConnectable={isConnectable} />
     </div>

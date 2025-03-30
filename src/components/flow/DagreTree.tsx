@@ -1,23 +1,17 @@
-import { useMemo } from 'react';
-import ReactFlow, {
-  ConnectionLineType,
-  Node,
-  Edge,
-  MiniMap,
-  Controls,
-} from 'reactflow';
-
-import { convertTreeNodeToNodesAndEdges } from '../../utils/nodes-edges';
 import { css } from '@emotion/react';
-import { TreeNode } from './TreeNode';
-import { Direction, getLayoutedElements } from '../../utils/dagre';
 import { action, toJS } from 'mobx';
 import { observer } from 'mobx-react-lite';
+import { useMemo } from 'react';
+import ReactFlow, { ConnectionLineType, Controls, Edge, MiniMap, Node } from 'reactflow';
+
+import { tree } from '../../data/tree';
 import { FlowHandler } from '../../models/FlowHandler';
 import { TreeHandler, TreeHandlerContext } from '../../models/TreeHandler';
-import ParticlesBackground from '../ui/particles-background';
 import { treeNodeHeight, treeNodeWidth } from '../../styles/treeNode';
-import { tree } from '../../data/tree';
+import { Direction, getLayoutedElements } from '../../utils/dagre';
+import { convertTreeNodeToNodesAndEdges } from '../../utils/nodes-edges';
+import ParticlesBackground from '../ui/particles-background';
+import { TreeNode } from './TreeNode';
 
 function injectDataProperties(
   nodes: Node[],
