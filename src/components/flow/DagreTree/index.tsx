@@ -9,7 +9,8 @@ import { TreeHandler, TreeHandlerContext } from "../../../models/TreeHandler";
 import { Direction, getLayoutedElements } from "../../../utils/dagre";
 import { convertTreeNodeToNodesAndEdges } from "../../../utils/nodes-edges";
 import ParticlesBackground from "../../ui/particles-background";
-import { TreeNode, treeNodeHeight, treeNodeWidth } from "../TreeNode";
+import { TreeNode } from "../TreeNode";
+import { treeNodeHeight, treeNodeWidth } from "./styles";
 import { CustomReactFlow } from "./styles";
 
 function injectDataProperties(
