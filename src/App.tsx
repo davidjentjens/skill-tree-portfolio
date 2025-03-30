@@ -4,11 +4,10 @@ import "reactflow/dist/style.css";
 
 import { DagreTree } from "./components/DagreTree";
 import Footer from "./components/ui/Footer";
-import { absolute, flexCenter, fullSize } from "./styles";
 
 function App() {
   return (
-    <div css={[fullSize, flexCenter]}>
+    <div>
       <DagreTree />
       <Footer />
     </div>
