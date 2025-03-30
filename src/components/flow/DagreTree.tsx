@@ -7,7 +7,7 @@ import ReactFlow, {
   Controls,
 } from 'reactflow';
 
-import { convertTreeNodeToNodesAndEdges, tree } from '../../data/nodes-edges';
+import { convertTreeNodeToNodesAndEdges } from '../../utils/nodes-edges';
 import { css } from '@emotion/react';
 import { TreeNode } from './TreeNode';
 import { Direction, getLayoutedElements } from '../../utils/dagre';
@@ -17,6 +17,7 @@ import { FlowHandler } from '../../models/FlowHandler';
 import { TreeHandler, TreeHandlerContext } from '../../models/TreeHandler';
 import ParticlesBackground from '../ui/particles-background';
 import { treeNodeHeight, treeNodeWidth } from '../../styles/treeNode';
+import { tree } from '../../data/tree';
 
 function injectDataProperties(
   nodes: Node[],

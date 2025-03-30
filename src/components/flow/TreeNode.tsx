@@ -1,5 +1,5 @@
 import { Handle, NodeProps, Position, useNodeId } from 'reactflow';
-import { TreeViewData } from '../../data/nodes-edges';
+import { TreeViewData } from '../../utils/nodes-edges';
 import { Button } from '@blueprintjs/core';
 import { FlexColumn, FlexRow } from '../base/Flex';
 import { flex1, fullSize, center } from '../../styles';
