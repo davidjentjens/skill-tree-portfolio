@@ -3,18 +3,18 @@ import { observer } from "mobx-react-lite";
 import { useMemo } from "react";
 import { ConnectionLineType, Controls, MiniMap } from "reactflow";
 
-import { tree } from "../../../data/tree";
-import { FlowHandler } from "../../../models/FlowHandler";
-import { TreeHandler, TreeHandlerContext } from "../../../models/TreeHandler";
-import { Direction, getLayoutedElements } from "../../../utils/dagre";
-import { convertTreeNodeToNodesAndEdges } from "../../../utils/nodes-edges";
-import ParticlesBackground from "../../ui/particles-background";
+import { tree } from "../../data/tree";
+import { FlowHandler } from "../../models/FlowHandler";
+import { TreeHandler, TreeHandlerContext } from "../../models/TreeHandler";
+import { Direction, getLayoutedElements } from "../../utils/dagre";
+import { convertTreeNodeToNodesAndEdges } from "../../utils/nodes-edges";
+import ParticlesBackground from "../ui/particles-background";
 import { treeNodeHeight, treeNodeWidth } from "./styles";
 import { CustomReactFlow } from "./styles";
 import { nodeTypes } from "./types";
 import { injectDataProperties } from "./utils";
 
-export const LayoutFlow = observer(() => {
+export const DagreTree = observer(() => {
   const changeShowingChildren = action(
     (nodeId: string, showChildren: boolean) => {
       console.log("changeShowingChildren", nodeId, showChildren);

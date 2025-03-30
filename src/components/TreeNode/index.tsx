@@ -4,9 +4,9 @@ import * as FaIcons from "react-icons/fa";
 import * as SiIcons from "react-icons/si";
 import { Handle, NodeProps, Position, useNodeId } from "reactflow";
 
-import profileUrl from "../../../assets/pp.jpeg";
-import { useTreeHandler } from "../../../models/TreeHandler";
-import { TreeViewData } from "../../../utils/nodes-edges";
+import profileUrl from "../../assets/pp.jpeg";
+import { useTreeHandler } from "../../models/TreeHandler";
+import { TreeViewData } from "../../utils/nodes-edges";
 import {
   ChildCountBadge,
   FlexColumnStyled,
