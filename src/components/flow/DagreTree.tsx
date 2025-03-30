@@ -5,18 +5,18 @@ import ReactFlow, {
   Edge,
   MiniMap,
   Controls,
-  Background,
 } from 'reactflow';
 
 import { convertTreeNodeToNodesAndEdges, tree } from '../../data/nodes-edges';
 import { css } from '@emotion/react';
-import { TreeNode, treeNodeHeight, treeNodeWidth } from './TreeNode';
+import { TreeNode } from './TreeNode';
 import { Direction, getLayoutedElements } from '../../utils/dagre';
 import { action, toJS } from 'mobx';
 import { observer } from 'mobx-react-lite';
 import { FlowHandler } from '../../models/FlowHandler';
 import { TreeHandler, TreeHandlerContext } from '../../models/TreeHandler';
 import ParticlesBackground from '../ui/particles-background';
+import { treeNodeHeight, treeNodeWidth } from '../../styles/treeNode';
 
 function injectDataProperties(
   nodes: Node[],

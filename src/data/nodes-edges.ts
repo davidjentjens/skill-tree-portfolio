@@ -5,13 +5,7 @@ import { Skill } from '../types';
 const position = { x: 0, y: 0 };
 const edgeType = 'smoothstep';
 
-export interface TreeData {
-  label: string;
-  subLabel?: string;
-  color?: string;
-}
-
-export interface TreeViewData extends TreeData {
+export interface TreeViewData extends Skill {
   showingChildren: boolean;
   setShowingChildren?(showingChildren: boolean): void;
 }
@@ -24,9 +18,9 @@ export interface TreeNode {
 
 export const tree: TreeNode = {
   id: 'root',
-  data: { 
+  data: {
     label: 'Skills', 
-    subLabel: 'Professional Skills Overview'
+    subLabel: 'Professional Skills Overview',
   },
   children: [
     // Frontend Category
@@ -36,7 +30,7 @@ export const tree: TreeNode = {
         label: 'React.js', 
         subLabel: 'Building modern, responsive user interfaces with React and its ecosystem.',
         color: '#61DAFB', // React color
-        proficiencyLevel: 5,
+        proficiencyLevel: 80,
         yearsExperience: 6,
         category: 'frontend',
         icon: 'FaReact',

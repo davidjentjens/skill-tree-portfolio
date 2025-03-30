@@ -286,18 +286,18 @@ export const fullHeight: CSSObject = {
 /**
  * CSS object for applying image cover style.
  */
-export const imageCover: CSSObject = {
+export const imageCover = {
   objectFit: 'cover',
-  ...fullSize,
+  ...(fullSize as CSSObject),
 };
 
 /**
  * CSS object for containing images.
  */
-export const imageContain: CSSObject = {
+export const imageContain = {
   objectFit: 'contain',
   ...fullSize,
-};
+} as CSSObject;
 
 /**
  * Generates a drop shadow CSS property based on the provided size and inset flag.
