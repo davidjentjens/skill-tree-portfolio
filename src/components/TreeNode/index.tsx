@@ -24,8 +24,6 @@ import {
   ToggleButton,
 } from "./styles";
 
-export const rootNodeSize = 150; // Set a size for the root node
-
 export type TreeNodeProps = NodeProps<TreeViewData>;
 
 export const TreeNode = observer((props: TreeNodeProps) => {
@@ -69,7 +67,9 @@ export const TreeNode = observer((props: TreeNodeProps) => {
   const getIcon = () => {
     if (!icon) return FaIcons.FaCode;
 
-    return (FaIcons as any)[icon] || (SiIcons as any)[icon] || FaIcons.FaCode;
+    return (
+      (FaIcons as never)[icon] || (SiIcons as never)[icon] || FaIcons.FaCode
+    );
   };
 
   const Icon = getIcon();
