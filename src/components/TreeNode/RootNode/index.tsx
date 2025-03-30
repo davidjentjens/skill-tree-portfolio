@@ -29,6 +29,7 @@ export const RootNode = observer(
         {/* Profile Picture */}
         <ProfileImage src={profileUrl} alt={data.label} />
 
+        {/* Node Header */}
         <NodeContent>
           <h3>👋 Hi, I&apos;m David M. Jentjens</h3>
           <p>
@@ -55,6 +56,7 @@ export const RootNode = observer(
           </ToggleButton>
         )}
 
+        {/* Bottom handle for connecting edges */}
         <Handle
           type="source"
           position={Position.Bottom}

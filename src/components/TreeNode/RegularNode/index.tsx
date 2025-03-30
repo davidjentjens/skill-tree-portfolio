@@ -74,6 +74,7 @@ export const RegularNode = observer(
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
+        {/* Top handle for connecting edges */}
         <Handle
           type="target"
           position={Position.Top}
@@ -86,9 +87,10 @@ export const RegularNode = observer(
         )}
 
         <FlexColumnStyled>
+          {/* Header with icon and proficiency bar, if applicable */}
           <HeaderContainer>
             <NodeIcon>
-              <Icon size={24} className="text-white" />
+              <Icon size={24} />
             </NodeIcon>
             {proficiencyLevel && (
               <ProgressBarContainer>
@@ -99,6 +101,8 @@ export const RegularNode = observer(
               </ProgressBarContainer>
             )}
           </HeaderContainer>
+
+          {/* Node label and metadata */}
           <NodeContent>
             <NodeLabel>{data.label}</NodeLabel>
             {data.subLabel && <NodeSubLabel>{data.subLabel}</NodeSubLabel>}
@@ -108,6 +112,8 @@ export const RegularNode = observer(
               <NodeMetadata>Proficiency: {normalizedProficiency}%</NodeMetadata>
             )}
           </NodeContent>
+
+          {/* Expand node button */}
           {childCount > 0 && (
             <ToggleButton
               onClick={() => setShowingChildren?.(!showingChildren)}
@@ -120,6 +126,8 @@ export const RegularNode = observer(
             </ToggleButton>
           )}
         </FlexColumnStyled>
+
+        {/* Bottom handle for connecting edges */}
         <Handle
           type="source"
           position={Position.Bottom}
