@@ -1,6 +1,6 @@
 // components/ui/Footer.tsx
-import React from 'react';
-import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
+import React from "react";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
 import {
   footer,
@@ -8,15 +8,15 @@ import {
   footerDivider,
   footerLink,
   footerText,
-} from '../../styles';
+} from "../../styles";
 
 const Footer: React.FC = () => {
   return (
     <footer css={footer}>
       <div css={footerContent}>
         <span css={footerText}>
-          Built for the Outlier AI Hackathon using React, TypeScript, react-flow and
-          dagrejs.
+          Built for the Outlier AI Hackathon using React, TypeScript, react-flow
+          and dagrejs.
         </span>
         <div css={footerDivider} />
         <a

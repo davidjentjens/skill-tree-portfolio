@@ -1,9 +1,9 @@
-import dagre from 'dagre';
-import { Edge, Node, Position } from 'reactflow';
+import dagre from "dagre";
+import { Edge, Node, Position } from "reactflow";
 
 export enum Direction {
-  Vertical = 'TB',
-  Horizontal = 'LR',
+  Vertical = "TB",
+  Horizontal = "LR",
 }
 
 export function getLayoutedElements(
@@ -11,12 +11,12 @@ export function getLayoutedElements(
   edges: Edge[],
   direction: Direction,
   nodeWidth: number,
-  nodeHeight: number,
+  nodeHeight: number
 ) {
   const dagreGraph = new dagre.graphlib.Graph();
   dagreGraph.setDefaultEdgeLabel(() => ({}));
 
-  const isHorizontal = direction === 'LR';
+  const isHorizontal = direction === "LR";
   dagreGraph.setGraph({ rankdir: direction });
 
   nodes.forEach((node) => {

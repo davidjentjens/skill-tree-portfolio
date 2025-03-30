@@ -1,4 +1,4 @@
-import { makeAutoObservable } from 'mobx';
+import { makeAutoObservable } from "mobx";
 import {
   addEdge,
   applyEdgeChanges,
@@ -8,7 +8,7 @@ import {
   EdgeChange,
   Node,
   NodeChange,
-} from 'reactflow';
+} from "reactflow";
 
 export class FlowHandler {
   constructor(public nodes: Node[], public edges: Edge[]) {

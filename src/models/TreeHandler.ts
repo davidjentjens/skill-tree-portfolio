@@ -1,8 +1,8 @@
-import { makeAutoObservable } from 'mobx';
-import { createContext, useContext } from 'react';
-import { Edge, getIncomers, getOutgoers, Node } from 'reactflow';
+import { makeAutoObservable } from "mobx";
+import { createContext, useContext } from "react";
+import { Edge, getIncomers, getOutgoers, Node } from "reactflow";
 
-import { FlowHandler } from './FlowHandler';
+import { FlowHandler } from "./FlowHandler";
 
 export class TreeHandler {
   constructor(public flowHandler: FlowHandler) {
@@ -14,13 +14,21 @@ export class TreeHandler {
   }
 
   getChildrenCount(node: Node): number {
-    const outgoers = getOutgoers(node, this.flowHandler.nodes, this.flowHandler.edges);
+    const outgoers = getOutgoers(
+      node,
+      this.flowHandler.nodes,
+      this.flowHandler.edges
+    );
 
     return outgoers.length;
   }
 
   getDescendantsCount(node: Node): number {
-    const outgoers = getOutgoers(node, this.flowHandler.nodes, this.flowHandler.edges);
+    const outgoers = getOutgoers(
+      node,
+      this.flowHandler.nodes,
+      this.flowHandler.edges
+    );
 
     return (
       outgoers.length +
@@ -29,7 +37,11 @@ export class TreeHandler {
   }
 
   shouldNodeHide(node: Node): boolean {
-    const parents = getIncomers(node, this.flowHandler.nodes, this.flowHandler.edges);
+    const parents = getIncomers(
+      node,
+      this.flowHandler.nodes,
+      this.flowHandler.edges
+    );
 
     if (parents.length === 0) {
       return false;
@@ -72,7 +84,7 @@ export const useTreeHandler = () => {
   const treeHandler = useContext(TreeHandlerContext);
 
   if (!treeHandler) {
-    throw new Error('useTreeHandler must be used within a TreeHandlerProvider');
+    throw new Error("useTreeHandler must be used within a TreeHandlerProvider");
   }
 
   return treeHandler;
