@@ -102,19 +102,17 @@ yarn build
 npm run build
 ```
 
-🔧 Customization
+## 🔧 Customization
+
 To customize the skill tree with your own data, modify the tree structure in src/data/tree.ts.
-<br/><br/>
-🎭 Outlier AI Hackathon
+
+## 🎭 Outlier AI Hackathon
+
 This project was specifically created for the Outlier AI Hackathon, showcasing how interactive visualizations can transform the way we present professional information. The hackathon challenged participants to create innovative applications, and this skill tree visualization represents a unique approach to professional portfolios.
-<br/><br/>
-📝 License
+
+## 📝 License
+
 Distributed under the MIT License. See LICENSE for more information.
-<br/><br/>
-👤 Contact
-David M. Jentjens - <davidjentjens@gmail.com>
-Project Link: <https://github.com/davidjentjens/skill-tree-visualizer>
-<br/><br/>
 
 <div align="center">
   <sub>Built with ❤️ for the Outlier AI Hackathon</sub>
