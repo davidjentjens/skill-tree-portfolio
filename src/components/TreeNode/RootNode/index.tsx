@@ -1,7 +1,7 @@
 // src/components/TreeNode/RootNode/index.tsx
 import { observer } from "mobx-react-lite";
-import { useState } from "react";
-import { Handle, Position } from "reactflow";
+import { useEffect, useState } from "react";
+import { Handle, Position, useReactFlow } from "reactflow";
 
 import profileUrl from "../../../assets/pp.jpeg";
 import { useLegend } from "../../../context/LegendContext";
@@ -35,6 +35,19 @@ export const RootNode = observer(
         setShowingChildren?.(true);
       }, 500); // Match this with the fadeOut animation duration
     };
+
+    const reactFlowInstance = useReactFlow();
+
+    useEffect(() => {
+      setTimeout(() => {
+        // Set explicit viewport to fit all nodes
+        reactFlowInstance.fitView({
+          padding: 0.5,
+          includeHiddenNodes: false,
+          duration: 300,
+        });
+      }, 300);
+    }, [reactFlowInstance]);
 
     return (
       <RootNodeContainer

@@ -67,6 +67,7 @@ export const DagreTree = observer(() => {
   return (
     <TreeHandlerContext.Provider value={treeHandler}>
       <CustomReactFlow
+        defaultViewport={{ x: 0, y: 0, zoom: 0.5 }}
         minZoom={0.2}
         maxZoom={1.5}
         proOptions={{
@@ -81,7 +82,7 @@ export const DagreTree = observer(() => {
         onConnect={flowHandler.onConnect}
         connectionLineType={ConnectionLineType.SmoothStep}
         fitView
-        fitViewOptions={{ padding: 0.2, duration: 300 }}
+        fitViewOptions={{ padding: 0.5, duration: 300 }}
         key={`flow-${fitViewFlag}`}
       >
         <MiniMap zoomable pannable />
