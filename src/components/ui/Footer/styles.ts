@@ -23,11 +23,11 @@ export const FooterContent = styled("div", {
 });
 
 export const FooterText = styled("span", {
-  color: "rgba(156, 163, 175, 0.8)",
+  color: "rgba(112, 117, 127, 0.8)",
 });
 
 export const FooterLink = styled("a", {
-  color: "rgba(156, 163, 175, 0.8)",
+  color: "rgba(112, 117, 127, 0.8)",
   textDecoration: "none",
   transition: "color 0.2s ease",
   fontSize: "1rem",
@@ -39,5 +39,5 @@ export const FooterLink = styled("a", {
 export const FooterDivider = styled("div", {
   height: "12px",
   width: "1px",
-  background: "rgba(156, 163, 175, 0.5)",
+  background: "rgba(112, 117, 127, 0.8)",
 });

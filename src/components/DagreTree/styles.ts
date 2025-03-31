@@ -20,4 +20,8 @@ export const CustomReactFlow = styled(ReactFlow, {
   "& .react-flow__handle-bottom": {
     bottom: 0,
   },
+
+  ".react-flow__attribution": {
+    display: "none",
+  },
 });

@@ -1,13 +1,17 @@
 // src/components/TreeNode/RootNode/index.tsx
 import { observer } from "mobx-react-lite";
 import { useState } from "react";
-import * as FaIcons from "react-icons/fa";
 import { Handle, Position } from "reactflow";
 
 import profileUrl from "../../../assets/pp.jpeg";
 import { TreeViewData } from "../../../utils/nodes-edges";
-import { NodeContent, ToggleButton } from "../styles";
-import { ProfileImage, RootNodeContainer } from "./styles";
+import { NodeContent } from "../styles";
+import {
+  ContentWrapper,
+  GetStartedButton,
+  ProfileImage,
+  RootNodeContainer,
+} from "./styles";
 
 interface RootNodeProps {
   data: TreeViewData;
@@ -18,7 +22,16 @@ interface RootNodeProps {
 export const RootNode = observer(
   ({ data, isConnectable, childCount }: RootNodeProps) => {
     const [isHovered, setIsHovered] = useState(false);
+    const [showButton, setShowButton] = useState(true);
     const { showingChildren, setShowingChildren } = data;
+
+    const handleGetStarted = () => {
+      setShowButton(false);
+      // Wait for the fade-out animation to complete before expanding the tree
+      setTimeout(() => {
+        setShowingChildren?.(true);
+      }, 500); // Match this with the fadeOut animation duration
+    };
 
     return (
       <RootNodeContainer
@@ -26,34 +39,33 @@ export const RootNode = observer(
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Profile Picture */}
-        <ProfileImage src={profileUrl} alt={data.label} />
+        {/* Wrapper for profile image and content side by side */}
+        <ContentWrapper>
+          {/* Profile Picture */}
+          <ProfileImage src={profileUrl} alt={data.label} />
 
-        {/* Node Header */}
-        <NodeContent>
-          <h3>👋 Hi, I&apos;m David M. Jentjens</h3>
-          <p>
-            Front-End Engineer & QA Manager with 6+ years of React experience
-          </p>
-          <p>
-            This interactive skill tree visualizes my technical expertise and
-            experience. Each node represents a technology or skill in my
-            toolkit.
-          </p>
-          <p>
-            Click around to explore my capabilities and see how they connect!
-          </p>
-        </NodeContent>
+          {/* Node Header */}
+          <NodeContent>
+            <h3>👋 Hi, I&apos;m David M. Jentjens</h3>
+            <p>
+              Front-End Engineer & QA Manager with 6+ years of React experience
+            </p>
+            <p>
+              This interactive skill tree visualizes my technical expertise and
+              experience. Each node represents a technology or skill in my
+              toolkit.
+            </p>
+            <p>
+              Click around to explore my capabilities and see how they connect!
+            </p>
+          </NodeContent>
+        </ContentWrapper>
 
-        {/* Expand/Collapse Button for Root Node */}
-        {childCount > 0 && (
-          <ToggleButton onClick={() => setShowingChildren?.(!showingChildren)}>
-            {showingChildren ? (
-              <FaIcons.FaChevronUp />
-            ) : (
-              <FaIcons.FaChevronDown />
-            )}
-          </ToggleButton>
+        {/* Get Started Button below the content wrapper */}
+        {childCount > 0 && !showingChildren && (
+          <GetStartedButton onClick={handleGetStarted} visible={showButton}>
+            Get Started
+          </GetStartedButton>
         )}
 
         {/* Bottom handle for connecting edges */}

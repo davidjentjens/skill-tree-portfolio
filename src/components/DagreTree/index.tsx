@@ -81,7 +81,7 @@ export const DagreTree = observer(() => {
         onConnect={flowHandler.onConnect}
         connectionLineType={ConnectionLineType.SmoothStep}
         fitView
-        fitViewOptions={{ padding: 0.2, duration: 500 }}
+        fitViewOptions={{ padding: 0.2, duration: 300 }}
         key={`flow-${fitViewFlag}`}
       >
         <MiniMap zoomable pannable />
