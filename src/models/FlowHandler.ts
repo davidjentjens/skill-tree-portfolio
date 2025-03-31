@@ -10,8 +10,14 @@ import {
   NodeChange,
 } from "reactflow";
 
+import { Direction } from "../utils/dagre";
+
 export class FlowHandler {
-  constructor(public nodes: Node[], public edges: Edge[]) {
+  constructor(
+    public nodes: Node[],
+    public edges: Edge[],
+    public direction: Direction = Direction.Vertical
+  ) {
     makeAutoObservable(this, {}, { autoBind: true });
   }
 
