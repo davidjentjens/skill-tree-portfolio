@@ -20,30 +20,9 @@ export const CustomButton = styled("button", {
   cursor: "pointer",
   border: "none",
   outline: "none",
-
-  variants: {
-    variant: {
-      minimal: {
-        background: "transparent",
-        "&:hover": {
-          background: "rgba(255, 255, 255, 0.1)",
-        },
-      },
-    },
-    size: {
-      small: {
-        padding: "4px 8px",
-        fontSize: "12px",
-      },
-    },
-  },
 });
 
 export const ToggleButton = styled("button", {
-  position: "absolute",
-  bottom: 8,
-  marginTop: 10,
-  right: "calc(50% - 12px)",
   color: "#ffffff",
   borderRadius: "40%",
   padding: "6px 8px",
@@ -54,7 +33,6 @@ export const ToggleButton = styled("button", {
   cursor: "pointer",
   border: "none",
   outline: "none",
-
   backgroundColor: "#31425a",
 
   "&:hover": {

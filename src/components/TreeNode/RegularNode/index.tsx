@@ -8,6 +8,7 @@ import { Handle, Position } from "reactflow";
 import { TreeViewData } from "../../../utils/nodes-edges";
 import { NodeContent, ToggleButton } from "../styles";
 import {
+  BadgesContainer,
   ChildCountBadge,
   DescendantsCountBadge,
   FlexColumnStyled,
@@ -74,6 +75,7 @@ export const RegularNode = observer(
         isHovered={isHovered}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        isBranchNode={childCount > 0}
       >
         {/* Top handle for connecting edges */}
         <Handle
@@ -81,18 +83,6 @@ export const RegularNode = observer(
           position={Position.Top}
           isConnectable={isConnectable}
         />
-
-        {/* Descendant count badge */}
-        {descendantsCount > 0 && (
-          <DescendantsCountBadge>
-            {descendantsCount} desc.
-          </DescendantsCountBadge>
-        )}
-
-        {/* Child count badge */}
-        {childCount > 0 && !showingChildren && (
-          <ChildCountBadge>{childCount} children</ChildCountBadge>
-        )}
 
         <FlexColumnStyled>
           {/* Header with icon and proficiency bar, if applicable */}
@@ -124,18 +114,36 @@ export const RegularNode = observer(
             )}
           </NodeContent>
 
-          {/* Expand node button */}
-          {childCount > 0 && (
-            <ToggleButton
-              onClick={() => setShowingChildren?.(!showingChildren)}
-            >
-              {showingChildren ? (
-                <FaIcons.FaChevronUp />
-              ) : (
-                <FaIcons.FaChevronDown />
+          <BadgesContainer>
+            <div>
+              {descendantsCount > 0 && !showingChildren && (
+                <DescendantsCountBadge>
+                  {descendantsCount} desc.
+                </DescendantsCountBadge>
               )}
-            </ToggleButton>
-          )}
+            </div>
+
+            {/* Toggle button in the middle */}
+            <div>
+              {childCount > 0 && (
+                <ToggleButton
+                  onClick={() => setShowingChildren?.(!showingChildren)}
+                >
+                  {showingChildren ? (
+                    <FaIcons.FaChevronUp />
+                  ) : (
+                    <FaIcons.FaChevronDown />
+                  )}
+                </ToggleButton>
+              )}
+            </div>
+
+            <div>
+              {childCount > 0 && !showingChildren && (
+                <ChildCountBadge>{childCount} children</ChildCountBadge>
+              )}
+            </div>
+          </BadgesContainer>
         </FlexColumnStyled>
 
         {/* Bottom handle for connecting edges */}

@@ -7,6 +7,14 @@ export const NodeContainer = styled(BaseNodeContainer, {
   padding: 16,
   width: treeNodeWidth,
   maxHeight: treeNodeHeight,
+
+  variants: {
+    isBranchNode: {
+      true: {
+        backgroundColor: "#0f2d58",
+      },
+    },
+  },
 });
 
 export const FlexColumnStyled = styled("div", {
@@ -64,28 +72,29 @@ export const NodeMetadata = styled("div", {
 });
 
 export const CountBadge = styled("div", {
-  position: "absolute",
   color: "white",
   padding: "4px 8px",
   borderRadius: "10px",
-
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
   fontSize: "0.75rem",
   fontWeight: "bold",
   boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
-  zIndex: 5,
 });
 
 export const ChildCountBadge = styled(CountBadge, {
-  bottom: 10,
-  right: 10,
   backgroundColor: "#3b82f6",
 });
 
 export const DescendantsCountBadge = styled(CountBadge, {
-  bottom: 10,
-  left: 10,
   backgroundColor: "#de8f4a",
+});
+
+export const BadgesContainer = styled("div", {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  marginTop: "16px",
+  paddingTop: "8px",
 });
