@@ -118,6 +118,7 @@ This project was specifically created for the Outlier AI Hackathon, showcasing h
 
 Distributed under the MIT License. See LICENSE for more information.
 <br/>
+<br/>
 
 <div align="center">
   <sub>Built with ❤️ for the Outlier AI Hackathon</sub>
