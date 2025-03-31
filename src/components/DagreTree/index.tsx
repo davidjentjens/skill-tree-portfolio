@@ -1,7 +1,7 @@
 import { action, toJS } from "mobx";
 import { observer } from "mobx-react-lite";
-import { useMemo, useState } from "react";
-import { ConnectionLineType, Controls, MiniMap } from "reactflow";
+import { useEffect, useMemo, useState } from "react";
+import { ConnectionLineType, Controls, MiniMap, useReactFlow } from "reactflow";
 
 import { tree } from "../../data/tree";
 import { FlowHandler } from "../../models/FlowHandler";
@@ -58,6 +58,17 @@ export const DagreTree = observer(() => {
     () => new TreeHandler(flowHandler),
     [flowHandler]
   );
+
+  const reactFlowInstance = useReactFlow();
+  useEffect(() => {
+    setTimeout(() => {
+      // Set explicit viewport to fit all nodes
+      reactFlowInstance.fitView({
+        includeHiddenNodes: false,
+        duration: 800,
+      });
+    }, 100);
+  }, []);
 
   return (
     <TreeHandlerContext.Provider value={treeHandler}>
