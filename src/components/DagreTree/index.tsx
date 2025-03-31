@@ -66,7 +66,7 @@ export const DagreTree = observer(() => {
         minZoom={0.2}
         maxZoom={1.5}
         proOptions={{
-          hideAttribution: false,
+          hideAttribution: true,
         }}
         nodes={toJS(treeHandler.nodes)}
         nodeTypes={nodeTypes}
