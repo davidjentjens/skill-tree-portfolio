@@ -8,8 +8,8 @@ import { FlowHandler } from "../../models/FlowHandler";
 import { TreeHandler, TreeHandlerContext } from "../../models/TreeHandler";
 import { Direction, getLayoutedElements } from "../../utils/dagre";
 import { convertTreeNodeToNodesAndEdges } from "../../utils/nodes-edges";
+import { treeNodeHeight, treeNodeWidth } from "../TreeNode/styles";
 import ParticlesBackground from "../ui/ParticlesBackground";
-import { treeNodeHeight, treeNodeWidth } from "./styles";
 import { CustomReactFlow } from "./styles";
 import { nodeTypes } from "./types";
 import { injectDataProperties } from "./utils";
@@ -50,7 +50,7 @@ export const DagreTree = observer(() => {
   );
 
   const flowHandler = useMemo(
-    () => new FlowHandler(hidableNodes, hidableEdges),
+    () => new FlowHandler(hidableNodes, hidableEdges, Direction.Vertical),
     [layoutedNodes, layoutedEdges]
   );
 

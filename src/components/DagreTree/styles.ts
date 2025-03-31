@@ -2,9 +2,6 @@
 import { styled } from "@stitches/react";
 import ReactFlow from "reactflow";
 
-export const treeNodeWidth = 272;
-export const treeNodeHeight = 260;
-
 export const CustomReactFlow = styled(ReactFlow, {
   "& .react-flow__handle": {
     opacity: 0,
