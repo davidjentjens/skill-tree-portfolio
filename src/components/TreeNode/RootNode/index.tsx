@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Handle, Position } from "reactflow";
 
 import profileUrl from "../../../assets/pp.jpeg";
+import { useLegend } from "../../../context/LegendContext";
 import { TreeViewData } from "../../../utils/nodes-edges";
 import { NodeContent } from "../styles";
 import {
@@ -24,11 +25,13 @@ export const RootNode = observer(
     const [isHovered, setIsHovered] = useState(false);
     const [showButton, setShowButton] = useState(true);
     const { showingChildren, setShowingChildren } = data;
+    const { toggleLegend } = useLegend();
 
     const handleGetStarted = () => {
       setShowButton(false);
       // Wait for the fade-out animation to complete before expanding the tree
       setTimeout(() => {
+        toggleLegend();
         setShowingChildren?.(true);
       }, 500); // Match this with the fadeOut animation duration
     };

@@ -7,14 +7,6 @@ export const NodeContainer = styled(BaseNodeContainer, {
   padding: 16,
   width: treeNodeWidth,
   maxHeight: treeNodeHeight,
-
-  variants: {
-    isBranchNode: {
-      true: {
-        backgroundColor: "#0f2d58",
-      },
-    },
-  },
 });
 
 export const FlexColumnStyled = styled("div", {
@@ -63,8 +55,8 @@ export const NodeLabel = styled("div", {
 });
 
 export const NodeSubLabel = styled("div", {
-  fontSize: "0.75rem",
-  color: "#9ca3af",
+  fontSize: "0.8rem",
+  color: "#f4f8ff",
 });
 
 export const NodeMetadata = styled("div", {

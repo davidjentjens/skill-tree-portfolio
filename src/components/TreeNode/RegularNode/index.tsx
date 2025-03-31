@@ -72,10 +72,10 @@ export const RegularNode = observer(
 
     return (
       <NodeContainer
+        css={{ background: data.color }}
         isHovered={isHovered}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        isBranchNode={childCount > 0}
       >
         {/* Top handle for connecting edges */}
         <Handle

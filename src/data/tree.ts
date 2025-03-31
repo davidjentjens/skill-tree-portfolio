@@ -1,3 +1,5 @@
+// src/data/tree.ts
+import { categoryColors } from "../utils/colorMap";
 import { TreeNode } from "../utils/nodes-edges";
 
 export const tree: TreeNode = {
@@ -7,24 +9,26 @@ export const tree: TreeNode = {
     subLabel: "Professional Skills Overview",
   },
   children: [
-    // Education (No proficiency level)
     {
       id: "education",
       data: {
         label: "Education",
         subLabel: "Academic background and certifications",
-        color: "#8E44AD", // Purple
+        color: categoryColors.education.main,
         category: "education",
         icon: "FaGraduationCap",
+        details:
+          "Formal education in Computer Science with additional specialized training in AI and machine learning",
       },
       children: [
         {
           id: "university",
           data: {
             label: "University",
-            subLabel: "Formal academic education",
-            color: "#9B59B6",
+            subLabel: "Formal academic education (2017-2021)",
+            color: categoryColors.education.darker,
             icon: "FaUniversity",
+            details: "Computer Science education at top Brazilian universities",
           },
           children: [
             {
@@ -32,8 +36,9 @@ export const tree: TreeNode = {
               data: {
                 label: "PUC-Rio",
                 subLabel: "Bachelor's degree, Computer Science (2018-2021)",
-                color: "#8E44AD",
-                details: "Grade: 8.5",
+                color: categoryColors.education.lighter,
+                details:
+                  "Completed Bachelor's degree in Computer Science with an excellent grade of 8.5",
                 year: 2021,
               },
             },
@@ -42,8 +47,9 @@ export const tree: TreeNode = {
               data: {
                 label: "UFRJ",
                 subLabel: "Computer Science (2017-2018)",
-                color: "#8E44AD",
-                details: "Transferred to PUC-Rio via scholarship",
+                color: categoryColors.education.lighter,
+                details:
+                  "Started Computer Science studies before transferring to PUC-Rio via academic scholarship",
                 year: 2018,
               },
             },
@@ -53,9 +59,10 @@ export const tree: TreeNode = {
           id: "certifications",
           data: {
             label: "Certifications",
-            subLabel: "Professional certifications and courses",
-            color: "#9B59B6",
+            subLabel: "Professional certifications (2021)",
+            color: categoryColors.education.darker,
             icon: "FaCertificate",
+            details: "Specialized training in advanced technologies",
           },
           children: [
             {
@@ -63,29 +70,10 @@ export const tree: TreeNode = {
               data: {
                 label: "Udacity",
                 subLabel: "Machine Learning Engineer Nanodegree (2021)",
-                color: "#8E44AD",
-                details: "Creating and deploying ML models via AWS SageMaker",
+                color: categoryColors.education.lighter,
+                details:
+                  "Created machine learning models to solve industry problems and deployed them as APIs in AWS SageMaker",
                 year: 2021,
-              },
-            },
-            {
-              id: "fullcycle-rabbitmq",
-              data: {
-                label: "RabbitMQ Certification",
-                subLabel: "Full Cycle",
-                color: "#8E44AD",
-                details: "Credential ID c716be69-add7-43c1-aa99-5d0dbeb02b9c",
-                year: 2024,
-              },
-            },
-            {
-              id: "fullcycle-docker",
-              data: {
-                label: "Docker Certification",
-                subLabel: "Full Cycle",
-                color: "#8E44AD",
-                details: "Credential ID 6d96fd13-dfe6-49d8-ac75-ce8851d17e58",
-                year: 2023,
               },
             },
           ],
@@ -93,15 +81,16 @@ export const tree: TreeNode = {
       ],
     },
 
-    // Experience (No proficiency level)
     {
       id: "experience",
       data: {
         label: "Experience",
-        subLabel: "Professional work history",
-        color: "#2980B9", // Blue
+        subLabel: "Professional work history (2018-Present)",
+        color: categoryColors.experience.main,
         category: "experience",
         icon: "FaBriefcase",
+        details:
+          "Over 6 years of professional experience in software development and team leadership",
       },
       children: [
         {
@@ -109,8 +98,10 @@ export const tree: TreeNode = {
           data: {
             label: "Intelltech",
             subLabel: "2022-Present",
-            color: "#3498DB",
+            color: categoryColors.experience.darker,
             icon: "FaBuilding",
+            details:
+              "Worked on front-end libraries and managed QA processes for the mining industry",
           },
           children: [
             {
@@ -118,9 +109,9 @@ export const tree: TreeNode = {
               data: {
                 label: "Tech Manager (QA)",
                 subLabel: "Apr 2024-Present",
-                color: "#2980B9",
+                color: categoryColors.experience.lighter,
                 details:
-                  "Coordinating developers and QA team, implementing testing strategies, managing design system centralization",
+                  "Coordinated a team of developers and quality analysts, implemented testing strategies including unit, integration, e2e and stress testing, and managed design system centralization",
                 year: 2024,
               },
             },
@@ -129,9 +120,9 @@ export const tree: TreeNode = {
               data: {
                 label: "Sr. Full Stack Developer",
                 subLabel: "Apr 2023-Apr 2024",
-                color: "#2980B9",
+                color: categoryColors.experience.lighter,
                 details:
-                  "Created/maintained front-end libraries for mining industry clients, managed CI/CD pipeline, documentation",
+                  "Created and maintained front-end libraries for mining industry clients, managed CI/CD pipeline, and handled documentation",
                 year: 2023,
               },
             },
@@ -142,9 +133,9 @@ export const tree: TreeNode = {
           data: {
             label: "Portal Solar",
             subLabel: "Jan 2023-Apr 2023",
-            color: "#3498DB",
+            color: categoryColors.experience.lighter,
             details:
-              'Full Stack Developer: Next.js, Ruby on Rails, Created "Solaris" design system',
+              "Developed SEO for institutional websites with Next.js and backend with Ruby on Rails. Created and maintained 'Solaris' design system for React and React Native applications",
             year: 2023,
           },
         },
@@ -153,9 +144,9 @@ export const tree: TreeNode = {
           data: {
             label: "Tmov",
             subLabel: "Mar 2022-Jan 2023",
-            color: "#3498DB",
+            color: categoryColors.experience.lighter,
             details:
-              "Full Stack Developer: Transportation logistics platform with React, Node, .NET Core, SQL Server",
+              "Developed and improved a transportation logistics platform using React, Node, .NET Core and SQL Server",
             year: 2022,
           },
         },
@@ -164,8 +155,10 @@ export const tree: TreeNode = {
           data: {
             label: "ICA PUC-Rio",
             subLabel: "2018-2022",
-            color: "#3498DB",
+            color: categoryColors.experience.darker,
             icon: "FaBuilding",
+            details:
+              "Worked on AI projects for major companies including Petrobras and Intel",
           },
           children: [
             {
@@ -173,9 +166,9 @@ export const tree: TreeNode = {
               data: {
                 label: "Full Stack Developer",
                 subLabel: "Aug 2020-Mar 2022",
-                color: "#2980B9",
+                color: categoryColors.experience.lighter,
                 details:
-                  "React web interfaces for Petrobras and Intel, back-end with Node.js and C#",
+                  "Developed React web interfaces for Petrobras and Intel, and collaborated on back-end development with Node.js and C#",
                 year: 2020,
               },
             },
@@ -184,9 +177,9 @@ export const tree: TreeNode = {
               data: {
                 label: "Software Engineer Intern",
                 subLabel: "Aug 2018-Jul 2020",
-                color: "#2980B9",
+                color: categoryColors.experience.lighter,
                 details:
-                  "AI projects for Petrobras and Intel using React.js, Node.js, Python, C#",
+                  "Collaborated on AI projects for Petrobras and Intel using React.js, Node.js, Python and C#",
                 year: 2018,
               },
             },
@@ -196,324 +189,262 @@ export const tree: TreeNode = {
           id: "unicainstancia",
           data: {
             label: "UnicaInstancia",
-            subLabel: "Sep 2020-Apr 2021 (Part-time)",
-            color: "#3498DB",
+            subLabel: "Sep 2020-Apr 2021",
+            color: categoryColors.experience.lighter,
             details:
-              "Junior Product Manager: Product team coordination, development infrastructure management",
+              "Coordinated the product team, set goals for different areas, and managed development infrastructure while working part-time",
             year: 2020,
           },
         },
       ],
     },
 
-    // Technical Skills (With proficiency levels)
     {
       id: "technical-skills",
       data: {
         label: "Technical Skills",
-        subLabel: "Programming languages, frameworks, and technologies",
-        color: "#27AE60", // Green
-        category: "skills",
+        subLabel: "Programming languages and technologies",
+        color: categoryColors.neutral.main,
+        category: "neutral",
         icon: "FaCode",
+        details:
+          "Extensive experience with multiple programming languages and frameworks",
       },
       children: [
-        // Frontend Category
         {
           id: "frontend",
           data: {
             label: "Frontend",
             subLabel: "6+ years experience",
-            color: "#2ECC71",
+            color: categoryColors.frontend.darker,
             icon: "FaDesktop",
+            category: "frontend",
+            details: "Deep expertise in frontend technologies and frameworks",
           },
           children: [
             {
               id: "react",
               data: {
                 label: "React.js",
-                subLabel: "Building modern, responsive user interfaces",
-                color: "#61DAFB", // React color
+                subLabel: "Modern UI framework",
+                color: categoryColors.frontend.lighter,
                 proficiencyLevel: 90,
                 yearsExperience: 6,
                 category: "frontend",
                 icon: "FaReact",
-                projects: [
-                  {
-                    id: "p1",
-                    title: "Web Application Development",
-                    description:
-                      "Developed full-stack applications with React frontend",
-                    technologies: ["React", "TypeScript", "Node.js"],
-                    company: "INTELLTECH",
-                    year: 2022,
-                  },
-                ],
+                details:
+                  "Developed multiple React applications for various clients including Petrobras and Intel",
               },
             },
             {
-              id: "typescript",
+              id: "web-fundamentals",
               data: {
-                label: "HTML/CSS/JS/TS",
-                subLabel: "Frontend fundamentals",
-                color: "#3178C6", // TypeScript color
+                label: "HTML, CSS, JS, TS",
+                subLabel: "Web fundamentals",
+                color: categoryColors.frontend.lighter,
                 proficiencyLevel: 90,
                 yearsExperience: 6,
                 category: "frontend",
                 icon: "SiTypescript",
+                details:
+                  "Applied core web technologies across numerous projects for over 6 years",
               },
             },
             {
               id: "nextjs",
               data: {
                 label: "Next.js",
-                subLabel: "SEO-optimized React applications",
-                color: "#000000",
+                subLabel: "React framework",
+                color: categoryColors.frontend.lighter,
                 proficiencyLevel: 80,
                 yearsExperience: 2,
                 category: "frontend",
                 icon: "SiNextdotjs",
+                details:
+                  "Used Next.js for SEO optimization of institutional websites at Portal Solar",
               },
             },
             {
               id: "design-systems",
               data: {
                 label: "Design Systems",
-                subLabel: "Component libraries and UI standardization",
-                color: "#F1C40F",
+                subLabel: "Component libraries",
+                color: categoryColors.frontend.lighter,
                 proficiencyLevel: 80,
                 yearsExperience: 3,
                 category: "frontend",
                 icon: "FaPalette",
+                details:
+                  "Created and maintained the 'Solaris' design system at Portal Solar and centralized design components at Intelltech",
               },
             },
           ],
         },
 
-        // Backend Category
         {
           id: "backend",
           data: {
             label: "Backend",
             subLabel: "6+ years experience",
-            color: "#2ECC71",
+            color: categoryColors.backend.darker,
             icon: "FaServer",
+            category: "backend",
+            details:
+              "Built robust server-side applications with various technologies",
           },
           children: [
             {
               id: "nodejs",
               data: {
                 label: "Node.js",
-                subLabel: "Building scalable backend services and APIs",
-                color: "#339933", // Node.js color
+                subLabel: "JavaScript runtime",
+                color: categoryColors.backend.lighter,
                 proficiencyLevel: 90,
                 yearsExperience: 6,
                 category: "backend",
                 icon: "FaNodeJs",
-                projects: [
-                  {
-                    id: "p3",
-                    title: "REST API Development",
-                    description: "Designed and implemented RESTful APIs",
-                    technologies: ["Node.js", "Express", "PostgreSQL"],
-                    company: "PORTAL SOLAR",
-                    year: 2022,
-                  },
-                ],
+                details:
+                  "Developed backend services for multiple companies including ICA PUC-Rio and Tmov",
               },
             },
             {
               id: "csharp",
               data: {
-                label: "C#/.NET Core",
-                subLabel: "Enterprise backend development",
-                color: "#512BD4", // C# color
+                label: "C#/.NET",
+                subLabel: "Backend development",
+                color: categoryColors.backend.lighter,
                 proficiencyLevel: 80,
                 yearsExperience: 6,
                 category: "backend",
                 icon: "SiCsharp",
+                details:
+                  "Used C# for backend development at ICA PUC-Rio and for the logistics platform at Tmov",
               },
             },
             {
               id: "python",
               data: {
                 label: "Python/Django",
-                subLabel: "Web development and data analysis",
-                color: "#3776AB", // Python color
+                subLabel: "Web framework",
+                color: categoryColors.backend.lighter,
                 proficiencyLevel: 70,
                 yearsExperience: 2,
                 category: "backend",
                 icon: "FaPython",
+                details:
+                  "Applied Python for AI projects at ICA PUC-Rio and in machine learning models for the Udacity nanodegree",
               },
             },
             {
-              id: "rails",
+              id: "ruby-rails",
               data: {
                 label: "Ruby on Rails",
-                subLabel: "Web application framework",
-                color: "#CC0000", // Rails color
+                subLabel: "Web framework",
+                color: categoryColors.backend.lighter,
                 proficiencyLevel: 70,
                 yearsExperience: 1,
                 category: "backend",
                 icon: "SiRubyonrails",
+                details:
+                  "Developed backend applications at Portal Solar using Ruby on Rails",
               },
             },
           ],
         },
 
-        // Databases Category
-        {
-          id: "databases",
-          data: {
-            label: "Databases",
-            subLabel: "Data storage and management",
-            color: "#2ECC71",
-            icon: "FaDatabase",
-          },
-          children: [
-            {
-              id: "postgresql",
-              data: {
-                label: "PostgreSQL",
-                subLabel: "Designing and optimizing database schemas",
-                color: "#336791", // PostgreSQL color
-                proficiencyLevel: 80,
-                yearsExperience: 4,
-                category: "database",
-                icon: "SiPostgresql",
-              },
-            },
-            {
-              id: "sqlserver",
-              data: {
-                label: "SQL Server",
-                subLabel: "Enterprise database management",
-                color: "#CC2927", // SQL Server color
-                proficiencyLevel: 80,
-                yearsExperience: 3,
-                category: "database",
-                icon: "SiMicrosoftsqlserver",
-              },
-            },
-            {
-              id: "mongodb",
-              data: {
-                label: "MongoDB",
-                subLabel: "NoSQL document database",
-                color: "#47A248", // MongoDB color
-                proficiencyLevel: 60,
-                yearsExperience: 1,
-                category: "database",
-                icon: "SiMongodb",
-              },
-            },
-            {
-              id: "redis",
-              data: {
-                label: "Redis",
-                subLabel: "In-memory data structure store",
-                color: "#DC382D", // Redis color
-                proficiencyLevel: 60,
-                yearsExperience: 1,
-                category: "database",
-                icon: "SiRedis",
-              },
-            },
-          ],
-        },
-
-        // DevOps Category
         {
           id: "devops",
           data: {
             label: "DevOps",
             subLabel: "4+ years experience",
-            color: "#2ECC71",
+            color: categoryColors.devops.darker,
             icon: "FaCloudUploadAlt",
+            category: "devops",
+            details: "Implemented deployment and infrastructure solutions",
           },
           children: [
             {
               id: "docker",
               data: {
                 label: "Docker",
-                subLabel: "Containerization and deployment",
-                color: "#2496ED", // Docker color
+                subLabel: "Containerization",
+                color: categoryColors.devops.lighter,
                 proficiencyLevel: 80,
                 yearsExperience: 4,
                 category: "devops",
                 icon: "FaDocker",
+                details:
+                  "Used Docker for containerization across multiple projects",
               },
             },
             {
               id: "cicd",
               data: {
                 label: "CI/CD",
-                subLabel: "Continuous integration and deployment",
-                color: "#4CAF50",
+                subLabel: "Continuous integration/deployment",
+                color: categoryColors.devops.lighter,
                 proficiencyLevel: 80,
                 yearsExperience: 4,
                 category: "devops",
                 icon: "FaCodeBranch",
-              },
-            },
-            {
-              id: "rabbitmq",
-              data: {
-                label: "RabbitMQ",
-                subLabel: "Message broker and queue management",
-                color: "#FF6600", // RabbitMQ color
-                proficiencyLevel: 70,
-                yearsExperience: 2,
-                category: "devops",
-                icon: "SiRabbitmq",
+                details:
+                  "Created and maintained CI/CD pipelines at Intelltech and other companies",
               },
             },
             {
               id: "aws",
               data: {
                 label: "AWS",
-                subLabel: "Cloud services and infrastructure",
-                color: "#FF9900", // AWS color
+                subLabel: "Cloud services",
+                color: categoryColors.devops.lighter,
                 proficiencyLevel: 70,
                 yearsExperience: 2,
                 category: "devops",
                 icon: "FaAws",
+                details:
+                  "Deployed machine learning models to AWS SageMaker during Udacity nanodegree program",
               },
             },
           ],
         },
 
-        // Machine Learning
         {
-          id: "ml",
+          id: "databases",
           data: {
-            label: "Machine Learning",
-            subLabel: "AI and data analysis",
-            color: "#2ECC71",
-            icon: "FaBrain",
+            label: "Databases",
+            subLabel: "SQL and NoSQL databases",
+            color: categoryColors.database.darker,
+            icon: "FaDatabase",
+            category: "database",
+            details: "Worked with various database technologies",
           },
           children: [
             {
-              id: "tensorflow",
+              id: "postgresql",
               data: {
-                label: "TensorFlow",
-                subLabel: "Machine learning framework",
-                color: "#FF6F00", // TensorFlow color
-                proficiencyLevel: 70,
-                yearsExperience: 2,
-                category: "ml",
-                icon: "SiTensorflow",
+                label: "PostgreSQL",
+                subLabel: "Relational database",
+                color: categoryColors.database.lighter,
+                proficiencyLevel: 80,
+                yearsExperience: 4,
+                category: "database",
+                icon: "SiPostgresql",
+                details:
+                  "Used PostgreSQL as the primary database for several projects",
               },
             },
             {
-              id: "sagemaker",
+              id: "sqlserver",
               data: {
-                label: "AWS SageMaker",
-                subLabel: "ML model deployment",
-                color: "#FF9900",
-                proficiencyLevel: 70,
-                yearsExperience: 1,
-                category: "ml",
-                icon: "FaAws",
+                label: "SQL Server",
+                subLabel: "Microsoft database",
+                color: categoryColors.database.lighter,
+                proficiencyLevel: 75,
+                yearsExperience: 2,
+                category: "database",
+                icon: "SiMicrosoftsqlserver",
+                details:
+                  "Worked with SQL Server for the logistics platform at Tmov",
               },
             },
           ],
@@ -521,230 +452,134 @@ export const tree: TreeNode = {
       ],
     },
 
-    // Soft Skills (With proficiency levels)
-    {
-      id: "soft-skills",
-      data: {
-        label: "Soft Skills",
-        subLabel: "Management and communication",
-        color: "#E74C3C", // Red
-        category: "skills",
-        icon: "FaUsers",
-      },
-      children: [
-        // Management
-        {
-          id: "management",
-          data: {
-            label: "Management",
-            subLabel: "Team and process leadership",
-            color: "#F39C12",
-            icon: "FaUserTie",
-          },
-          children: [
-            {
-              id: "leadership",
-              data: {
-                label: "Team Leadership",
-                subLabel: "QA team coordination",
-                color: "#E67E22",
-                proficiencyLevel: 85,
-                yearsExperience: 2,
-                category: "management",
-                icon: "FaUsers",
-              },
-            },
-            {
-              id: "qa-management",
-              data: {
-                label: "Quality Management",
-                subLabel: "Leading QA processes and ensuring software quality",
-                color: "#4CAF50", // QA color
-                proficiencyLevel: 85,
-                yearsExperience: 2,
-                category: "management",
-                icon: "FaCheckCircle",
-                projects: [
-                  {
-                    id: "p5",
-                    title: "QA Process Implementation",
-                    description:
-                      "Established QA procedures that improved product quality metrics",
-                    technologies: ["Testing Frameworks", "CI/CD"],
-                    company: "INTELLTECH",
-                    year: 2023,
-                  },
-                ],
-              },
-            },
-            {
-              id: "process-implementation",
-              data: {
-                label: "Process Implementation",
-                subLabel: "Establishing and optimizing workflows",
-                color: "#E67E22",
-                proficiencyLevel: 80,
-                yearsExperience: 2,
-                category: "management",
-                icon: "FaSitemap",
-              },
-            },
-          ],
-        },
-
-        // Project Management
-        {
-          id: "project-management",
-          data: {
-            label: "Project Management",
-            subLabel: "Agile and development methodologies",
-            color: "#F39C12",
-            icon: "FaTasks",
-          },
-          children: [
-            {
-              id: "agile",
-              data: {
-                label: "Agile Methodologies",
-                subLabel: "Scrum, Kanban, and agile practices",
-                color: "#FF9800", // Agile color
-                proficiencyLevel: 85,
-                yearsExperience: 4,
-                category: "project-management",
-                icon: "FaRegStickyNote",
-              },
-            },
-            {
-              id: "documentation",
-              data: {
-                label: "Documentation",
-                subLabel: "Technical writing and knowledge management",
-                color: "#FF9800",
-                proficiencyLevel: 80,
-                yearsExperience: 4,
-                category: "project-management",
-                icon: "FaFileAlt",
-              },
-            },
-            {
-              id: "product-development",
-              data: {
-                label: "Product Development",
-                subLabel: "Feature planning and roadmap management",
-                color: "#FF9800",
-                proficiencyLevel: 75,
-                yearsExperience: 2,
-                category: "project-management",
-                icon: "FaRocket",
-              },
-            },
-          ],
-        },
-
-        // Communication
-        {
-          id: "communication",
-          data: {
-            label: "Communication",
-            subLabel: "Technical and interpersonal communication",
-            color: "#F39C12",
-            icon: "FaComments",
-          },
-          children: [
-            {
-              id: "technical-communication",
-              data: {
-                label: "Technical Communication",
-                subLabel: "Explaining complex concepts clearly",
-                color: "#E67E22",
-                proficiencyLevel: 85,
-                yearsExperience: 4,
-                category: "communication",
-                icon: "FaChalkboardTeacher",
-              },
-            },
-            {
-              id: "collaboration",
-              data: {
-                label: "Cross-team Collaboration",
-                subLabel: "Working effectively across departments",
-                color: "#E67E22",
-                proficiencyLevel: 85,
-                yearsExperience: 4,
-                category: "communication",
-                icon: "FaHandshake",
-              },
-            },
-            {
-              id: "teaching",
-              data: {
-                label: "Teaching",
-                subLabel: "Knowledge sharing and mentoring",
-                color: "#E67E22",
-                proficiencyLevel: 75,
-                yearsExperience: 1,
-                category: "communication",
-                icon: "FaGraduationCap",
-              },
-            },
-          ],
-        },
-      ],
-    },
-
-    // Languages (With proficiency levels)
     {
       id: "languages",
       data: {
         label: "Languages",
         subLabel: "Natural language proficiency",
-        color: "#9B59B6", // Purple
-        category: "skills",
+        color: categoryColors.language.main,
+        category: "language",
         icon: "FaLanguage",
+        details: "Multi-lingual communication skills",
       },
       children: [
         {
           id: "portuguese",
           data: {
             label: "Portuguese",
-            subLabel: "Native proficiency",
-            color: "#8E44AD",
+            subLabel: "Mother tongue",
+            color: categoryColors.language.lighter,
             proficiencyLevel: 100,
             category: "language",
             icon: "FaFlag",
+            details: "Native fluency in Portuguese",
           },
         },
         {
           id: "german",
           data: {
             label: "German",
-            subLabel: "Fluent/Native proficiency",
-            color: "#8E44AD",
+            subLabel: "Fluent",
+            color: categoryColors.language.lighter,
             proficiencyLevel: 95,
             category: "language",
             icon: "FaFlag",
+            details: "Near-native fluency in German",
           },
         },
         {
           id: "english",
           data: {
             label: "English",
-            subLabel: "Professional working proficiency/Fluent",
-            color: "#8E44AD",
+            subLabel: "Fluent",
+            color: categoryColors.language.lighter,
             proficiencyLevel: 90,
             category: "language",
             icon: "FaFlag",
+            details: "Professional working proficiency in English",
           },
         },
         {
           id: "french",
           data: {
             label: "French",
-            subLabel: "Basic proficiency",
-            color: "#8E44AD",
+            subLabel: "Basic",
+            color: categoryColors.language.lighter,
             proficiencyLevel: 40,
             category: "language",
             icon: "FaFlag",
+            details: "Basic communication skills in French",
+          },
+        },
+      ],
+    },
+
+    {
+      id: "soft-skills",
+      data: {
+        label: "Soft Skills",
+        subLabel: "Leadership, Communication & Methodologies",
+        color: categoryColors.management.main,
+        category: "management",
+        icon: "FaUsers",
+        details:
+          "Professional skills beyond technical expertise, including leadership, communication, and project management",
+      },
+      children: [
+        {
+          id: "qa-management",
+          data: {
+            label: "QA Management",
+            subLabel: "Testing strategies (2023-Present)",
+            color: categoryColors.management.lighter,
+            proficiencyLevel: 85,
+            yearsExperience: 2,
+            category: "management",
+            icon: "FaCheckCircle",
+            details:
+              "Implemented comprehensive testing strategies including unit, integration, e2e, and stress testing at Intelltech",
+          },
+        },
+        {
+          id: "team-leadership",
+          data: {
+            label: "Team Leadership",
+            subLabel: "Developer coordination",
+            color: categoryColors.management.lighter,
+            proficiencyLevel: 80,
+            yearsExperience: 2,
+            category: "management",
+            icon: "FaUsers",
+            details:
+              "Coordinated teams of developers and quality analysts at Intelltech and UnicaInstancia",
+          },
+        },
+        {
+          id: "agile",
+          data: {
+            label: "Agile Methodologies",
+            subLabel: "Scrum and Kanban",
+            color: categoryColors.management.lighter,
+            proficiencyLevel: 85,
+            yearsExperience: 4,
+            category: "management",
+            icon: "FaRegStickyNote",
+            details:
+              "Applied agile methodologies across multiple projects and companies",
+          },
+        },
+        {
+          id: "product-management",
+          data: {
+            label: "Product Management",
+            subLabel: "Sep 2020-Apr 2021",
+            color: categoryColors.management.lighter,
+            proficiencyLevel: 75,
+            yearsExperience: 1,
+            category: "management",
+            icon: "FaRocket",
+            details:
+              "Coordinated product team and set long and short-term goals at UnicaInstancia",
           },
         },
       ],
