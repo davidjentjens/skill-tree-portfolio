@@ -15,8 +15,6 @@ import { nodeTypes } from "./types";
 import { injectDataProperties } from "./utils";
 
 export const DagreTree = observer(() => {
-  const [fitViewFlag, setFitViewFlag] = useState(0); // Counter to trigger fitView
-
   const changeShowingChildren = action(
     (nodeId: string, showChildren: boolean) => {
       console.log("changeShowingChildren", nodeId, showChildren);
@@ -25,9 +23,6 @@ export const DagreTree = observer(() => {
       if (!node) return;
 
       node.data.showingChildren = showChildren;
-
-      // Increment the flag to trigger a re-fit
-      setFitViewFlag((prev) => prev + 1);
     }
   );
 
@@ -83,7 +78,6 @@ export const DagreTree = observer(() => {
         connectionLineType={ConnectionLineType.SmoothStep}
         fitView
         fitViewOptions={{ padding: 0.5, duration: 300 }}
-        key={`flow-${fitViewFlag}`}
       >
         <MiniMap zoomable pannable />
         <Controls showInteractive={false} />

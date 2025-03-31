@@ -3,7 +3,7 @@ import { observer } from "mobx-react-lite";
 import { useEffect, useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as SiIcons from "react-icons/si";
-import { Handle, Position } from "reactflow";
+import { Handle, Position, useReactFlow } from "reactflow";
 
 import { TreeViewData } from "../../../utils/nodes-edges";
 import { NodeContent, ToggleButton } from "../styles";
@@ -69,6 +69,18 @@ export const RegularNode = observer(
     };
 
     const Icon = getIcon();
+
+    const reactFlowInstance = useReactFlow();
+
+    useEffect(() => {
+      setTimeout(() => {
+        // Set explicit viewport to fit all nodes
+        reactFlowInstance.fitView({
+          includeHiddenNodes: false,
+          duration: 800,
+        });
+      }, 100);
+    }, [reactFlowInstance]);
 
     return (
       <NodeContainer
