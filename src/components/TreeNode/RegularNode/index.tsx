@@ -9,6 +9,7 @@ import { TreeViewData } from "../../../utils/nodes-edges";
 import { NodeContent, ToggleButton } from "../styles";
 import {
   ChildCountBadge,
+  DescendantsCountBadge,
   FlexColumnStyled,
   HeaderContainer,
   NodeContainer,
@@ -81,9 +82,16 @@ export const RegularNode = observer(
           isConnectable={isConnectable}
         />
 
+        {/* Descendant count badge */}
+        {descendantsCount > 0 && (
+          <DescendantsCountBadge>
+            {descendantsCount} desc.
+          </DescendantsCountBadge>
+        )}
+
         {/* Child count badge */}
         {childCount > 0 && !showingChildren && (
-          <ChildCountBadge>{childCount}</ChildCountBadge>
+          <ChildCountBadge>{childCount} children</ChildCountBadge>
         )}
 
         <FlexColumnStyled>
@@ -107,7 +115,10 @@ export const RegularNode = observer(
             <NodeLabel>{data.label}</NodeLabel>
             {data.subLabel && <NodeSubLabel>{data.subLabel}</NodeSubLabel>}
 
-            <NodeMetadata>Descendants: {descendantsCount}</NodeMetadata>
+            {/* Metadata for additional information */}
+            {data.details && (
+              <NodeMetadata>Description: {data.details}</NodeMetadata>
+            )}
             {normalizedProficiency > 0 && (
               <NodeMetadata>Proficiency: {normalizedProficiency}%</NodeMetadata>
             )}

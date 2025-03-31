@@ -1,12 +1,12 @@
 // src/components/TreeNode/RegularNode/styles.ts
 import { styled } from "@stitches/react";
 
-import { BaseNodeContainer } from "../styles";
+import { BaseNodeContainer, treeNodeHeight, treeNodeWidth } from "../styles";
 
 export const NodeContainer = styled(BaseNodeContainer, {
   padding: 16,
-  width: 272,
-  height: 260,
+  width: treeNodeWidth,
+  maxHeight: treeNodeHeight,
 });
 
 export const FlexColumnStyled = styled("div", {
@@ -63,15 +63,12 @@ export const NodeMetadata = styled("div", {
   fontSize: "0.875rem",
 });
 
-export const ChildCountBadge = styled("div", {
+export const CountBadge = styled("div", {
   position: "absolute",
-  bottom: 10,
-  right: 10,
-  backgroundColor: "#3b82f6",
   color: "white",
-  borderRadius: "50%",
-  width: 24,
-  height: 24,
+  padding: "4px 8px",
+  borderRadius: "10px",
+
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -79,4 +76,16 @@ export const ChildCountBadge = styled("div", {
   fontWeight: "bold",
   boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
   zIndex: 5,
+});
+
+export const ChildCountBadge = styled(CountBadge, {
+  bottom: 10,
+  right: 10,
+  backgroundColor: "#3b82f6",
+});
+
+export const DescendantsCountBadge = styled(CountBadge, {
+  bottom: 10,
+  left: 10,
+  backgroundColor: "#de8f4a",
 });
