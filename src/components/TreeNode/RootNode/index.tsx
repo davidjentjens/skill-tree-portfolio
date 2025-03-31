@@ -36,6 +36,17 @@ export const RootNode = observer(
       }, 500); // Match this with the fadeOut animation duration
     };
 
+    const reactFlowInstance = useReactFlow();
+    useEffect(() => {
+      setTimeout(() => {
+        // Set explicit viewport to fit all nodes
+        reactFlowInstance.fitView({
+          includeHiddenNodes: false,
+          duration: 800,
+        });
+      }, 100);
+    }, []);
+
     return (
       <RootNodeContainer
         isHovered={isHovered}
