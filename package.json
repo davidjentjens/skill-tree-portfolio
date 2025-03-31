@@ -13,9 +13,6 @@
     "type-check": "tsc"
   },
   "dependencies": {
-    "@blueprintjs/core": "^5.10.3",
-    "@emotion/react": "^11.10.5",
-    "@react-spring/web": "^9.7.5",
     "@stitches/react": "^1.2.8",
     "dagre": "^0.8.5",
     "mobx": "^6.6.2",
@@ -27,7 +24,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
-    "@emotion/babel-plugin": "^11.10.5",
     "@types/dagre": "^0.7.52",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",

@@ -1,4 +1,3 @@
-import "@blueprintjs/core/lib/css/blueprint.css";
 import "reactflow/dist/style.css";
 
 import { DagreTree } from "./components/DagreTree";
