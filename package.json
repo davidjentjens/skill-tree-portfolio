@@ -1,7 +1,23 @@
 {
-  "name": "react-template",
-  "version": "0.0.0",
+  "name": "skill-tree-visualizer",
+  "version": "1.0.0",
+  "description": "Interactive skill tree visualization tool created for the Outlier AI Hackathon",
   "author": "David M. Jentjens",
+  "homepage": "https://davidjentjens.github.io/skill-tree-visualizer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidjentjens/skill-tree-visualizer"
+  },
+  "keywords": [
+    "skill-tree",
+    "react",
+    "visualization",
+    "interactive",
+    "outlier-ai",
+    "hackathon",
+    "reactflow",
+    "dagre"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

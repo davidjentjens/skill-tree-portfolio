@@ -1,5 +1,4 @@
 // src/components/TreeNode/RootNode/styles.ts
-import { keyframes } from "@emotion/react";
 import { styled } from "@stitches/react";
 
 import { BaseNodeContainer, treeNodeHeight } from "../styles";
