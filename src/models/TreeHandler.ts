@@ -90,6 +90,9 @@ export class TreeHandler {
     dagreGraph.setGraph({
       rankdir: Direction.Vertical,
       ranker: "network-simplex",
+      edgesep: 100,
+      nodesep: 100,
+      ranksep: 200,
     });
 
     // Add nodes with their original position relative to siblings

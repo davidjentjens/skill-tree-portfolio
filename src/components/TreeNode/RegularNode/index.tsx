@@ -106,9 +106,7 @@ export const RegularNode = observer(
             {data.subLabel && <NodeSubLabel>{data.subLabel}</NodeSubLabel>}
 
             {/* Metadata for additional information */}
-            {data.details && (
-              <NodeMetadata>Description: {data.details}</NodeMetadata>
-            )}
+            {data.details && <NodeMetadata>{data.details}</NodeMetadata>}
             {normalizedProficiency > 0 && (
               <NodeMetadata>Proficiency: {normalizedProficiency}%</NodeMetadata>
             )}
