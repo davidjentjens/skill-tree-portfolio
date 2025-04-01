@@ -70,19 +70,19 @@ cd skill-tree-visualizer
 yarn install
 ```
 
-# or
+### or
 
 ```sh
 npm install
 ```
 
-Start the development server
+3. Start the development server
 
 ```sh
 yarn dev
 ```
 
-# or
+### or
 
 ```sh
 npm run dev
@@ -96,7 +96,7 @@ Open your browser and navigate to <http://localhost:5173>
 yarn build
 ```
 
-# or
+### or
 
 ```sh
 npm run build
