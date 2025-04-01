@@ -464,31 +464,17 @@ export const tree: TreeNode = {
       },
       children: [
         {
-          id: "qa-management",
-          data: {
-            label: "QA Management",
-            subLabel: "Testing strategies (2023-Present)",
-            color: categoryColors.management.lighter,
-            proficiencyLevel: 85,
-            yearsExperience: 2,
-            category: "management",
-            icon: "FaCheckCircle",
-            details:
-              "Implemented comprehensive testing strategies including unit, integration, e2e, and stress testing at Intelltech",
-          },
-        },
-        {
           id: "team-leadership",
           data: {
             label: "Team Leadership",
-            subLabel: "Developer coordination",
+            subLabel: "Developer coordination & Quality Assurance",
             color: categoryColors.management.lighter,
-            proficiencyLevel: 80,
+            proficiencyLevel: 88,
             yearsExperience: 2,
             category: "management",
             icon: "FaUsers",
             details:
-              "Coordinated teams of developers and quality analysts at Intelltech and UnicaInstancia",
+              "Coordinated teams of developers and quality analysts, implementing comprehensive testing strategies including unit, integration, e2e, and stress testing across multiple projects",
           },
         },
         {
@@ -497,12 +483,12 @@ export const tree: TreeNode = {
             label: "Agile Methodologies",
             subLabel: "Scrum and Kanban",
             color: categoryColors.management.lighter,
-            proficiencyLevel: 85,
+            proficiencyLevel: 95, // Increased from 85 to 95
             yearsExperience: 4,
             category: "management",
             icon: "FaRegStickyNote",
             details:
-              "Applied agile methodologies across multiple projects and companies",
+              "Applied agile methodologies across multiple projects and companies, leading teams with strong focus on delivery efficiency and iterative development",
           },
         },
         {
