@@ -451,69 +451,6 @@ export const tree: TreeNode = {
         },
       ],
     },
-
-    {
-      id: "languages",
-      data: {
-        label: "Languages",
-        subLabel: "Natural language proficiency",
-        color: categoryColors.language.main,
-        category: "language",
-        icon: "FaLanguage",
-        details: "Multi-lingual communication skills",
-      },
-      children: [
-        {
-          id: "portuguese",
-          data: {
-            label: "Portuguese",
-            subLabel: "Mother tongue",
-            color: categoryColors.language.lighter,
-            proficiencyLevel: 100,
-            category: "language",
-            icon: "FaFlag",
-            details: "Native fluency in Portuguese",
-          },
-        },
-        {
-          id: "german",
-          data: {
-            label: "German",
-            subLabel: "Fluent",
-            color: categoryColors.language.lighter,
-            proficiencyLevel: 95,
-            category: "language",
-            icon: "FaFlag",
-            details: "Near-native fluency in German",
-          },
-        },
-        {
-          id: "english",
-          data: {
-            label: "English",
-            subLabel: "Fluent",
-            color: categoryColors.language.lighter,
-            proficiencyLevel: 90,
-            category: "language",
-            icon: "FaFlag",
-            details: "Professional working proficiency in English",
-          },
-        },
-        {
-          id: "french",
-          data: {
-            label: "French",
-            subLabel: "Basic",
-            color: categoryColors.language.lighter,
-            proficiencyLevel: 40,
-            category: "language",
-            icon: "FaFlag",
-            details: "Basic communication skills in French",
-          },
-        },
-      ],
-    },
-
     {
       id: "soft-skills",
       data: {
@@ -580,6 +517,67 @@ export const tree: TreeNode = {
             icon: "FaRocket",
             details:
               "Coordinated product team and set long and short-term goals at UnicaInstancia",
+          },
+        },
+      ],
+    },
+    {
+      id: "languages",
+      data: {
+        label: "Languages",
+        subLabel: "Natural language proficiency",
+        color: categoryColors.language.main,
+        category: "language",
+        icon: "FaLanguage",
+        details: "Multi-lingual communication skills",
+      },
+      children: [
+        {
+          id: "portuguese",
+          data: {
+            label: "Portuguese",
+            subLabel: "Mother tongue",
+            color: categoryColors.language.lighter,
+            proficiencyLevel: 100,
+            category: "language",
+            icon: "FaFlag",
+            details: "Native fluency in Portuguese",
+          },
+        },
+        {
+          id: "german",
+          data: {
+            label: "German",
+            subLabel: "Fluent",
+            color: categoryColors.language.lighter,
+            proficiencyLevel: 95,
+            category: "language",
+            icon: "FaFlag",
+            details: "Near-native fluency in German",
+          },
+        },
+        {
+          id: "english",
+          data: {
+            label: "English",
+            subLabel: "Fluent",
+            color: categoryColors.language.lighter,
+            proficiencyLevel: 90,
+            category: "language",
+            icon: "FaFlag",
+            details: "Professional working proficiency in English",
+          },
+        },
+        {
+          id: "french",
+          data: {
+            label: "French",
+            subLabel: "Basic",
+            color: categoryColors.language.lighter,
+            proficiencyLevel: 40,
+            category: "language",
+            icon: "FaFlag",
+            details: "Basic communication skills in French",
           },
         },
       ],
